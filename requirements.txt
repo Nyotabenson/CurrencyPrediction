@@ -1,5 +1,8 @@
-joblib==1.4.2
-pandas==2.2.3
-streamlit==1.39.0
-datetime
-scikit-learn
+certifi==2025.1.31
+charset-normalizer==3.4.1
+docopt==0.6.2
+idna==3.10
+pipreqs==0.4.13
+requests==2.32.3
+urllib3==2.3.0
+yarg==0.1.10
