@@ -6,3 +6,9 @@ pipreqs==0.4.13
 requests==2.32.3
 urllib3==2.3.0
 yarg==0.1.10
+scikit-learn==1.1.2
+streamlit==1.18.0
+pandas==1.5.2
+numpy==1.23.1
+datetime
+
