@@ -3,5 +3,4 @@ streamlit==1.18.0
 pandas==1.5.2
 numpy==1.23.1
 datetime
-python-dev
 
