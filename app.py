@@ -86,6 +86,6 @@ if st.button("Predict"):
             with col2:
               st.markdown("Accuracy:") 
               st.markdown("98.43056322368139%")
-        except:
-            st.error("To view the Currency Price, please input correct data!!")    
+        except Exception as e::
+            st.write(" error: ", e)    
  
