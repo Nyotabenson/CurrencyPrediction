@@ -1,8 +1,8 @@
-scikit-learn==1.1.2
-streamlit==1.18.0
-pandas==1.5.2
-numpy==1.23.1
+scikit-learn
+streamlit
+pandas
+numpy
 datetime
-altair==4.2.0
+altair
 joblib
 
