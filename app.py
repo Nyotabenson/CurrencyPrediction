@@ -6,6 +6,7 @@ from datetime import datetime
 from sklearn.preprocessing import LabelEncoder
 
 
+port = os.environ.get('PORT', 8501)
 
 st.title("CURRENCY PREDICTIONS")
 
