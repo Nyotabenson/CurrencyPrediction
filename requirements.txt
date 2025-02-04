@@ -4,5 +4,5 @@ pandas==1.5.2
 numpy==1.23.1
 datetime
 altair==4.2.0
-
+joblib
 
