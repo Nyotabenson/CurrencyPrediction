@@ -66,7 +66,7 @@ if st.button("Predict"):
 
             # Rearrange the features
             #df = df[["Interest-rate","Month","Quarter","Week-of-year","Week-of-month","Day-of-week","Day-of-year","election-year","US_election"]]
-            st.write("DataFrame columns:", df.columns)
+            
 
 
 
@@ -76,6 +76,7 @@ if st.button("Predict"):
             df['election-year'] = df['election-year'].replace('No', 0)
             df['US_election'] = df['US_election'].replace('Yes', 1)
             df['US_election'] = df['US_election'].replace('No', 0)
+            df = df[["Interest-rate","Month","Quarter","Week-of-year","Week-of-month","Day-of-week","Day-of-year","election-year","US_election"]]
             st.dataframe(df)
 
             # Model
