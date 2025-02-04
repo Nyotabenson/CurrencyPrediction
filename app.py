@@ -65,7 +65,9 @@ if st.button("Predict"):
         try:
 
             # Rearrange the features
-            df = df[["Interest-rate","Month","Quarter","Week-of-year","Week-of-month","Day-of-week","Day-of-year","election-year","US_election"]]
+            #df = df[["Interest-rate","Month","Quarter","Week-of-year","Week-of-month","Day-of-week","Day-of-year","election-year","US_election"]]
+            st.write("DataFrame columns:", df.columns)
+
 
 
             
