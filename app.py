@@ -74,7 +74,7 @@ if st.button("Predict"):
             df['election-year'] = df['election-year'].replace('No', 0)
             df['US_election'] = df['US_election'].replace('Yes', 1)
             df['US_election'] = df['US_election'].replace('No', 0)
-            #st.dataframe(df)
+            st.dataframe(df)
 
             # Model
             model = joblib.load("rf_model1.pkl")
