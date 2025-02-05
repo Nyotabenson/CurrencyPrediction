@@ -7,23 +7,6 @@ from sklearn.preprocessing import LabelEncoder
 import streamlit.components.v1 as components
 import os
 
-gtm_head = """
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NQ6W7T25');</script>
-<!-- End Google Tag Manager -->
-
-"""
-
-gtm_body = """
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQ6W7T25"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-"""
 
 gtag_script = """
 <!-- Google tag (gtag.js) -->
@@ -37,8 +20,6 @@ gtag_script = """
 </script>
 """
 
-components.html(gtm_head, height=0)
-components.html(gtm_body, height=0)
 components.html(gtag_script, height=0)
 
 
