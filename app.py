@@ -6,22 +6,41 @@ from datetime import datetime
 from sklearn.preprocessing import LabelEncoder
 import streamlit.components.v1 as components
 import os
+from bs4 import BeautifulSoup
+import pathlib
+import shutil
+import streamlit as st
 
-
-# JavaScript code to inject the Google Analytics tag
-ga_script = """
+GA_ID = "google_analytics"
+GA_SCRIPT = """
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
-<script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGLY9K9D0H"></script>
+<script id='google_analytics'>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-2MNRRM86CQ');
+  gtag('config', 'G-SGLY9K9D0H');
 </script>
 """
 
-st.markdown(ga_script, unsafe_allow_html=True)
+def inject_ga():
+    
+    index_path = pathlib.Path(st._file_).parent / "static" / "index.html"
+    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+    if not soup.find(id=GA_ID): 
+        bck_index = index_path.with_suffix('.bck')
+        if bck_index.exists():
+            shutil.copy(bck_index, index_path)  
+        else:
+            shutil.copy(index_path, bck_index)  
+        html = str(soup)
+        new_html = html.replace('<head>', '<head>\n' + GA_SCRIPT)
+        index_path.write_text(new_html)
+
+inject_ga()
+
+
+
 
 
 port = os.environ.get('PORT', 8501)

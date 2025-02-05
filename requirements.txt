@@ -1,8 +1,9 @@
-scikit-learn
-streamlit
-pandas
-numpy
-datetime
+beautifulsoup4==4.13.3
+joblib==1.4.2
+pandas==2.2.3
+scikit_learn==1.6.1
+streamlit==1.39.0
 altair
-joblib
-
+datetime
+pandas 
+numpy
