@@ -10,13 +10,13 @@ import os
 
 gtag_script = """
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGLY9K9D0H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-2MNRRM86CQ');
+  gtag('config', 'G-SGLY9K9D0H');
 </script>
 """
 
