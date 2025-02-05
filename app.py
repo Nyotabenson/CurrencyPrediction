@@ -10,14 +10,15 @@ import os
 
 ga_tracking_id = "G-SGLY9K9D0H"
 # JavaScript code to inject the Google Analytics tag
-ga_script = f"""
+ga_script = """
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={ga_tracking_id}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){{dataLayer.push(arguments);}}
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{ga_tracking_id}');
+
+  gtag('config', 'G-2MNRRM86CQ');
 </script>
 """
 
