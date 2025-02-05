@@ -8,18 +8,20 @@ import streamlit.components.v1 as components
 import os
 
 
-gtag_script = """
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGLY9K9D0H"></script>
+ga_tracking_id = "G-SGLY9K9D0H"
+# JavaScript code to inject the Google Analytics tag
+ga_script = f"""
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={ga_tracking_id}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){{dataLayer.push(arguments);}}
   gtag('js', new Date());
-
-  gtag('config', 'G-SGLY9K9D0H');
+  gtag('config', '{ga_tracking_id}');
 </script>
 """
 
-components.html(gtag_script, height=0)
+components.html(ga_script, height=0, width=0)
 
 
 
