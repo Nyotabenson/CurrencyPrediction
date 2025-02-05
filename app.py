@@ -25,7 +25,7 @@ GA_SCRIPT = """
 
 def inject_ga():
     
-    index_path = pathlib.Path(st._file_).parent / "static" / "index.html"
+    index_path = pathlib.Path(__file__).parent / "static" / "index.html"
     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
     if not soup.find(id=GA_ID): 
         bck_index = index_path.with_suffix('.bck')
