@@ -9,7 +9,6 @@ import os
 
 
 gtag_script = """
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGLY9K9D0H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
