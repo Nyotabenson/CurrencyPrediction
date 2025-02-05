@@ -6,16 +6,12 @@ from datetime import datetime
 from sklearn.preprocessing import LabelEncoder
 import streamlit.components.v1 as components
 import os
-from bs4 import BeautifulSoup
-import pathlib
-import shutil
-import streamlit as st
 
-GA_ID = "google_analytics"
+
 GA_SCRIPT = """
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGLY9K9D0H"></script>
-<script id='google_analytics'>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -23,22 +19,8 @@ GA_SCRIPT = """
 </script>
 """
 
-def inject_ga():
-    
-    index_path = pathlib.Path(__file__).parent / "static" / "index.html"
-    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
-    if not soup.find(id=GA_ID): 
-        bck_index = index_path.with_suffix('.bck')
-        if bck_index.exists():
-            shutil.copy(bck_index, index_path)  
-        else:
-            shutil.copy(index_path, bck_index)  
-        html = str(soup)
-        new_html = html.replace('<head>', '<head>\n' + GA_SCRIPT)
-        index_path.write_text(new_html)
-
-inject_ga()
-
+# Inject the Google Analytics script using components.html()
+components.html(GA_SCRIPT)
 
 
 
@@ -127,5 +109,6 @@ if st.button("Predict"):
               st.markdown("Accuracy:") 
               st.markdown("98.43056322368139%")
         except Exception as e:
-            st.write(" error: ", e)    
+            #st.write(" error: ", e)
+            st.error("Under Development contact the developer!")    
  
