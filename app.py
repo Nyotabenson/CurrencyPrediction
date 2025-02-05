@@ -21,8 +21,7 @@ ga_script = f"""
 </script>
 """
 
-components.html(ga_script, height=0, width=0)
-
+st.markdown(ga_script, unsafe_allow_html=True)
 
 
 port = os.environ.get('PORT', 8501)
