@@ -10,12 +10,12 @@ import os
 
 GA_SCRIPT = """
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGLY9K9D0H"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-SGLY9K9D0H');
+  gtag('config', 'G-2MNRRM86CQ');
 </script>
 """
 
@@ -110,5 +110,7 @@ if st.button("Predict"):
               st.markdown("98.43056322368139%")
         except Exception as e:
             #st.write(" error: ", e)
-            st.error("Under Development contact the developer!")    
+            st.error("Step 1: Make sure, all data provided is correct,")
+            st.error("Step 2: Contact the Developer!,")
+                
  
