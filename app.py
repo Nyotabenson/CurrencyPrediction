@@ -8,16 +8,30 @@ import streamlit.components.v1 as components
 import os
 
 
-st.markdown(f"""
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){{dataLayer.push(arguments);}}
-  gtag('js', new Date());
-  gtag('config', 'G-2MNRRM86CQ');
-</script>
-""", unsafe_allow_html=True)
+GTM_ID = "GTM-P7W3S69H"
+
+GTM_SCRIPT = f"""
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({{'gtm.start':
+new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{GTM_ID}');</script>
+"""
+
+st.markdown(GTM_SCRIPT, unsafe_allow_html=True)
+
+# ... Rest of your Streamlit app ...
+
+# st.markdown(f"""
+# <!-- Google tag (gtag.js) -->
+# <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
+# <script>
+#   window.dataLayer = window.dataLayer || [];
+#   function gtag(){{dataLayer.push(arguments);}}
+#   gtag('js', new Date());
+#   gtag('config', 'G-2MNRRM86CQ');
+# </script>
+# """, unsafe_allow_html=True)
 
 # Inject the Google Analytics script using components.html()
 #components.html(GA_SCRIPT, unsafe_allow_html=True)
