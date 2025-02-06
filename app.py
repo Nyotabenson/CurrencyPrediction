@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 import os
 
 
-GA_SCRIPT = f"""
+st.markdown(f"""
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
 <script>
@@ -17,10 +17,10 @@ GA_SCRIPT = f"""
   gtag('js', new Date());
   gtag('config', 'G-2MNRRM86CQ');
 </script>
-""", 
+""", unsafe_allow_html=True)
 
 # Inject the Google Analytics script using components.html()
-components.html(GA_SCRIPT, unsafe_allow_html=True)
+#components.html(GA_SCRIPT, unsafe_allow_html=True)
 
 
 
