@@ -14,7 +14,7 @@ import os
 
 GTM_ID = "GTM-P7W3S69H"  # Replace with your GTM ID
 
-GTM_SCRIPT = r"""
+GTM_SCRIPT = f"""
 <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
 new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 """
 
-st.markdown(GTM_SCRIPT, unsafe_allow_html=True)  # Place at the very top of your app
+components.html(GTM_SCRIPT, height=0)
 
 
 
