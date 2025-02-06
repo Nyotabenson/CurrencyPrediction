@@ -20,7 +20,7 @@ GA_SCRIPT = """
 """
 
 # Inject the Google Analytics script using components.html()
-components.html(GA_SCRIPT)
+components.html(GA_SCRIPT, unsafe_allow_html=True)
 
 
 
@@ -111,6 +111,6 @@ if st.button("Predict"):
         except Exception as e:
             #st.write(" error: ", e)
             st.error("Step 1: Make sure, all data provided is correct,")
-            st.error("Step 2: Contact the Developer!,")
+            st.error("Step 2: If correct, Contact the Developer!")
                 
  
