@@ -136,3 +136,6 @@ if st.button("Predict"):
             st.error("Step 2: If correct, Contact the Developer!")
                 
  
+if st.button('Return to Main Page'):
+        # Redirect the user back to the Flask app's index page
+        st.markdown('<a href="https://currency-preditction-a7cbb0b729b4.herokuapp.com/" target="_self">Back</a>', unsafe_allow_html=True)
