@@ -136,20 +136,8 @@ if st.button("Predict"):
             st.error("Step 2: If correct, Contact the Developer!")
                 
  
-    button_html = """
-    <html>
-        <head>
-            <script type="text/javascript">
-                function redirectToMainPage() {
-                    window.location.href = "https://currency-preditction-a7cbb0b729b4.herokuapp.com/";  // Redirect URL to Flask app
-                }
-            </script>
-        </head>
-        <body>
-            <button onclick="redirectToMainPage()">Main Page</button>
-        </body>
-    </html>
-    """
-    
-    # Display the button with the embedded JavaScript
-    components.html(button_html, height=100)
+# st.markdown(
+#     '<a href="https://example.com" style="display:inline-block; padding:10px 20px; background-color:blue; color:white; text-decoration:none; border-radius:5px;">Click Me</a>',
+#     unsafe_allow_html=True
+# )
+#st.link_button("Click Me", "https://example.com", use_container_width=False)
