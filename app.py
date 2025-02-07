@@ -136,24 +136,20 @@ if st.button("Predict"):
             st.error("Step 2: If correct, Contact the Developer!")
                 
  
-    return_button = '''
-    <style>
-    .return-button {
-        display: inline-block;
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 24px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        border-radius: 8px;
-    }
-    .return-button:hover {
-        background-color: #45a049;
-    }
-    </style>
-    <a href="http://localhost:5000" class="return-button">Return to Main Page</a>
-    '''
+    button_html = """
+    <html>
+        <head>
+            <script type="text/javascript">
+                function redirectToMainPage() {
+                    window.location.href = "https://currency-preditction-a7cbb0b729b4.herokuapp.com/";  // Redirect URL to Flask app
+                }
+            </script>
+        </head>
+        <body>
+            <button onclick="redirectToMainPage()">Main Page</button>
+        </body>
+    </html>
+    """
     
-    # Display the return button using Markdown
-    st.markdown(return_button, unsafe_allow_html=True)
+    # Display the button with the embedded JavaScript
+    components.html(button_html, height=100)
