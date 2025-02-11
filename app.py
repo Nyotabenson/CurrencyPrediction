@@ -28,24 +28,6 @@ components.html(GTM_SCRIPT, height=0)
 
 
 
-# ... Rest of your Streamlit app ...
-
-# st.markdown(f"""
-# <!-- Google tag (gtag.js) -->
-# <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MNRRM86CQ"></script>
-# <script>
-#   window.dataLayer = window.dataLayer || [];
-#   function gtag(){{dataLayer.push(arguments);}}
-#   gtag('js', new Date());
-#   gtag('config', 'G-2MNRRM86CQ');
-# </script>
-# """, unsafe_allow_html=True)
-
-# Inject the Google Analytics script using components.html()
-#components.html(GA_SCRIPT, unsafe_allow_html=True)
-
-
-
 
 port = os.environ.get('PORT', 8501)
 
@@ -96,7 +78,7 @@ df = pd.DataFrame([extract_date_features(date)])
 df['election-year'] = st.selectbox("Kenya election year?", options)
 df['US_election'] = st.selectbox("United State of America election year?", options)
 
-st.markdown("[Check Interest Rate](https://fred.stlouisfed.org/series/DGS1)")
+st.markdown("[Check US Interest Rate](https://fred.stlouisfed.org/series/DGS1)")
 
 df['Interest-rate'] = float(st.number_input(" US Interest rate"))
 if st.button("Predict"):
